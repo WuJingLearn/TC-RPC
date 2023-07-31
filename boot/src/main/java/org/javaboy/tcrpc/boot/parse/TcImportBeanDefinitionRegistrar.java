@@ -3,7 +3,7 @@ package org.javaboy.tcrpc.boot.parse;
 import org.javaboy.tcrpc.annotation.EnableTcRpc;
 import org.javaboy.tcrpc.config.ApplicationConfig;
 import org.javaboy.tcrpc.config.RegistryConfig;
-import org.javaboy.tcrpc.rpc.config.ServiceManger;
+import org.javaboy.tcrpc.rpc.service.ServiceManger;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

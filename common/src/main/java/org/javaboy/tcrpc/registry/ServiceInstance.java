@@ -7,6 +7,7 @@ import lombok.Data;
  * @author:majin.wj
  */
 @Builder
+@Data
 public class ServiceInstance {
 
     private String serviceKey;
@@ -26,4 +27,6 @@ public class ServiceInstance {
     public void setPort(Integer port) {
         this.port = port;
     }
+
+
 }

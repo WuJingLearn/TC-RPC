@@ -9,7 +9,7 @@ public class ApplicationConfig {
 
     private RegistryConfig registryConfig;
 
-
+    private ProtocolConfig protocolConfig;
 
 
     public void setRegistryConfig(RegistryConfig config) {
@@ -18,5 +18,13 @@ public class ApplicationConfig {
 
     public RegistryConfig getRegistryConfig() {
         return registryConfig;
+    }
+
+    public void setProtocolConfig(ProtocolConfig protocolConfig) {
+        this.protocolConfig = protocolConfig;
+    }
+
+    public ProtocolConfig getProtocolConfig() {
+        return protocolConfig;
     }
 }

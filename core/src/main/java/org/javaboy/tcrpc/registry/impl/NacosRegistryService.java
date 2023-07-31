@@ -31,7 +31,7 @@ public class NacosRegistryService implements RegistryService {
         }
     }
 
-    private void initNacos(String ip, String port) {
+    private void initNacos(String ip, Integer port) {
         String address = ip + ":" + port;
         try {
             this.namingService = NacosFactory.createNamingService(address);

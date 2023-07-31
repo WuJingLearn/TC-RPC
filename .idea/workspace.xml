@@ -4,35 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e3df36-3444-41f5-bb10-9565e7212e79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/EnableTcRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/TCReference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/TCService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcReferenceBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcRpcProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcServiceBeanDefinitionScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/RegistryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/exception/RpcException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/registry/ServiceInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/config/ServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/config/ServiceManger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/NetUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/ServiceKeyHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/DefaultRegistryFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/RegistryFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/RegistryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" afterDir="false" />
+    <list default="true" id="70e3df36-3444-41f5-bb10-9565e7212e79" name="Changes" comment="rpc">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ProtocolConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/serializer/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/serializer/SerializerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/serializer/impl/FastJsonSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/NettyRpcServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/RpcServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/RpcServerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/Codec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/CodecFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/CodecUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/RpcDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/RpcEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/codec/impl/CodecV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/packet/Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/packet/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/packet/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/packet/TCProtocol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boot/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/registry/ServiceInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/registry/ServiceInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/config/ServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/config/ServiceManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceManger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,25 +67,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "spring.boot",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring.boot&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;881cc4157ed641a365a86452f27ed745&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringBootOptions">
     <option name="autoCreateRunConfiguration" value="false" />
@@ -98,6 +99,10 @@
       <option name="presentableId" value="Default" />
       <updated>1690711154684</updated>
       <workItem from="1690711155874" duration="7399000" />
+      <workItem from="1690776285467" duration="3137000" />
+      <workItem from="1690784263037" duration="26000" />
+      <workItem from="1690785299615" duration="19000" />
+      <workItem from="1690799495690" duration="8911000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -107,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690719131966</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rpc">
+      <option name="closed" value="true" />
+      <created>1690776597641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690776597641</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +139,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="rpc" />
+    <option name="LAST_COMMIT_MESSAGE" value="rpc" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcRpcProperties.java</url>
+          <line>10</line>
+          <properties field="registryPort" class="org.javaboy.tcrpc.boot.parse.TcRpcProperties" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

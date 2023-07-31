@@ -1,4 +1,4 @@
-package org.javaboy.tcrpc.rpc.config;
+package org.javaboy.tcrpc.rpc.service;
 
 import lombok.Data;
 
