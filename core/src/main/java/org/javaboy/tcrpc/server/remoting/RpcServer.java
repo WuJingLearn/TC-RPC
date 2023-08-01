@@ -9,4 +9,6 @@ public interface RpcServer {
 
     void openServer() throws RpcException;
 
+    void shutDown() throws RpcException;
+
 }

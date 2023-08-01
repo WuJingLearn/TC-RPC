@@ -55,11 +55,11 @@ public class TcApplicationListener implements ApplicationListener<ApplicationCon
                     String version = serviceAnnotation.version();
                     Class<?> interfaceClass = serviceAnnotation.interfaceClass();
                     String serviceKey = ServiceKeyHelper.serviceKey(interfaceClass, version);
-                    ServiceDescriptor descriptor = new ServiceDescriptor(interfaceClass);
-                    ServiceProvider provider = new ServiceProvider(bean);
+//                    ServiceDescriptor descriptor = new ServiceDescriptor(interfaceClass);
+                    ServiceProvider provider = new ServiceProvider(bean,interfaceClass,serviceKey);
                     // 服务provider注册
                     ServiceManger.DEFAULT.addServiceProvider(serviceKey, provider);
-                    ServiceManger.DEFAULT.addServiceDescriptor(serviceKey, descriptor);
+//                    ServiceManger.DEFAULT.addServiceDescriptor(serviceKey, descriptor);
 
                     ServiceInstance instance = ServiceInstance.builder()
                             .serviceKey(serviceKey)

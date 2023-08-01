@@ -40,4 +40,12 @@ public class ServiceManger {
         serviceProviderMap.put(serviceKey, provider);
     }
 
+    public ServiceDescriptor getServiceDescriptor(String serviceKey) {
+        return serviceDescriptorMap.get(serviceKey);
+    }
+
+    public ServiceProvider getServiceProvider(String serviceKey) {
+        return serviceProviderMap.get(serviceKey);
+    }
+
 }
