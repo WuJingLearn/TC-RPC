@@ -7,6 +7,8 @@ import org.javaboy.tcrpc.config.RegistryConfig;
  */
 public interface RegistryFactory {
 
+    RegistryFactory DEFAULT = new DefaultRegistryFactory();
+
     RegistryService getRegistry(RegistryConfig config);
 
 }

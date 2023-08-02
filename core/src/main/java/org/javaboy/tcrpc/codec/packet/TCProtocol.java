@@ -1,4 +1,4 @@
-package org.javaboy.tcrpc.server.remoting.packet;
+package org.javaboy.tcrpc.codec.packet;
 
 /**
  * @author:majin.wj

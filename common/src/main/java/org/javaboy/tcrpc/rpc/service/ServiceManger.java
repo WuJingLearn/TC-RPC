@@ -16,11 +16,8 @@ public class ServiceManger {
     private List<String> serviceBeanNames = new ArrayList<>();
 
     /**
-     * key:serviceKey
-     * value: 服务描述信息
+     * key: serviceKey
      */
-    private Map<String, ServiceDescriptor> serviceDescriptorMap = new HashMap<>();
-
     private Map<String, ServiceProvider> serviceProviderMap = new HashMap<>();
 
 
@@ -32,16 +29,8 @@ public class ServiceManger {
         return Collections.unmodifiableList(serviceBeanNames);
     }
 
-    public void addServiceDescriptor(String serviceKey, ServiceDescriptor descriptor) {
-        serviceDescriptorMap.put(serviceKey, descriptor);
-    }
-
     public void addServiceProvider(String serviceKey, ServiceProvider provider) {
         serviceProviderMap.put(serviceKey, provider);
-    }
-
-    public ServiceDescriptor getServiceDescriptor(String serviceKey) {
-        return serviceDescriptorMap.get(serviceKey);
     }
 
     public ServiceProvider getServiceProvider(String serviceKey) {

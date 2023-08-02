@@ -1,4 +1,4 @@
-package org.javaboy.tcrpc.server.remoting.codec;
+package org.javaboy.tcrpc.codec;
 
 import io.netty.buffer.ByteBuf;
 

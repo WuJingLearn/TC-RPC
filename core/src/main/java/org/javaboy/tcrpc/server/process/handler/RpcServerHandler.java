@@ -1,11 +1,12 @@
 package org.javaboy.tcrpc.server.process.handler;
 
 import io.netty.channel.ChannelHandlerContext;
+
 import io.netty.channel.SimpleChannelInboundHandler;
-import org.javaboy.tcrpc.server.remoting.packet.Header;
-import org.javaboy.tcrpc.server.remoting.packet.Request;
-import org.javaboy.tcrpc.server.remoting.packet.Response;
-import org.javaboy.tcrpc.server.remoting.packet.TCProtocol;
+import org.javaboy.tcrpc.codec.packet.Header;
+import org.javaboy.tcrpc.codec.packet.Request;
+import org.javaboy.tcrpc.codec.packet.Response;
+import org.javaboy.tcrpc.codec.packet.TCProtocol;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +28,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<TCProtocol> {
         Header header = protocol.getHeader();
         Request request = (Request) protocol.getBody();
         try {
-            RequestHandler.handleRequest(header, request);
+            RequestHandler.handleRequest(ctx,protocol);
         } catch (Exception e) {
             Response response = new Response();
             response.setSuccess(false);

@@ -1,7 +1,7 @@
-package org.javaboy.tcrpc.server.remoting.codec;
+package org.javaboy.tcrpc.codec;
 
+import org.javaboy.tcrpc.codec.impl.CodecV1;
 import org.javaboy.tcrpc.exception.RpcException;
-import org.javaboy.tcrpc.server.remoting.codec.impl.CodecV1;
 
 import java.util.HashMap;
 import java.util.Map;

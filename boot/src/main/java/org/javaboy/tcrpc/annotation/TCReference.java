@@ -11,5 +11,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TCReference {
+
+    String id() default "";
     String version() default "1.0.0";
 }

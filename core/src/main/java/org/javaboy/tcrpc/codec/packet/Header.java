@@ -1,4 +1,4 @@
-package org.javaboy.tcrpc.server.remoting.packet;
+package org.javaboy.tcrpc.codec.packet;
 
 /**
  * @author:majin.wj
@@ -12,6 +12,15 @@ public class Header {
     private byte requestType;
     private long id;
     private long length;
+
+    public Header() {}
+
+    public Header(Header header) {
+        this.type = header.getType();
+        this.serializeType = header.getSerializeType();
+        this.id = header.getId();
+    }
+
 
     public byte getType() {
         return type;

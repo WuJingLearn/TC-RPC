@@ -1,8 +1,8 @@
-package org.javaboy.tcrpc.server.remoting.codec;
+package org.javaboy.tcrpc.codec;
 
 import io.netty.buffer.ByteBuf;
+import org.javaboy.tcrpc.codec.packet.TCProtocol;
 import org.javaboy.tcrpc.exception.RpcException;
-import org.javaboy.tcrpc.server.remoting.packet.TCProtocol;
 
 /**
  * @author:majin.wj

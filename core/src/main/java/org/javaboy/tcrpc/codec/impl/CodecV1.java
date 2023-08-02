@@ -1,15 +1,16 @@
-package org.javaboy.tcrpc.server.remoting.codec.impl;
+package org.javaboy.tcrpc.codec.impl;
 
 import io.netty.buffer.ByteBuf;
+import org.javaboy.tcrpc.codec.Codec;
+import org.javaboy.tcrpc.codec.CodecUtil;
+import org.javaboy.tcrpc.codec.packet.Header;
+import org.javaboy.tcrpc.codec.packet.Request;
+import org.javaboy.tcrpc.codec.packet.Response;
+import org.javaboy.tcrpc.codec.packet.TCProtocol;
 import org.javaboy.tcrpc.exception.RpcException;
 import org.javaboy.tcrpc.serializer.Serializer;
 import org.javaboy.tcrpc.serializer.SerializerFactory;
-import org.javaboy.tcrpc.server.remoting.codec.Codec;
-import org.javaboy.tcrpc.server.remoting.codec.CodecUtil;
-import org.javaboy.tcrpc.server.remoting.packet.Request;
-import org.javaboy.tcrpc.server.remoting.packet.Header;
-import org.javaboy.tcrpc.server.remoting.packet.Response;
-import org.javaboy.tcrpc.server.remoting.packet.TCProtocol;
+
 
 /**
  * @author:majin.wj

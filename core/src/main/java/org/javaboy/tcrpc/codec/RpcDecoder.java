@@ -1,10 +1,10 @@
-package org.javaboy.tcrpc.server.remoting.codec;
+package org.javaboy.tcrpc.codec;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import org.javaboy.tcrpc.server.remoting.packet.Header;
-import org.javaboy.tcrpc.server.remoting.packet.TCProtocol;
+import org.javaboy.tcrpc.codec.packet.Header;
+import org.javaboy.tcrpc.codec.packet.TCProtocol;
 
 import java.util.List;
 
