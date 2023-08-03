@@ -8,7 +8,6 @@ import org.javaboy.tcrpc.registry.DefaultRegistryFactory;
 import org.javaboy.tcrpc.registry.RegistryFactory;
 import org.javaboy.tcrpc.registry.RegistryService;
 import org.javaboy.tcrpc.registry.ServiceInstance;
-import org.javaboy.tcrpc.rpc.service.ServiceDescriptor;
 import org.javaboy.tcrpc.rpc.service.ServiceManger;
 import org.javaboy.tcrpc.rpc.service.ServiceProvider;
 import org.javaboy.tcrpc.server.remoting.RpcServer;

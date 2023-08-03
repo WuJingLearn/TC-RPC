@@ -12,6 +12,7 @@
         <module>common</module>
         <module>boot</module>
         <module>core</module>
+        <module>example</module>
     </modules>
 
     <properties>
