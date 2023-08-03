@@ -1,5 +1,8 @@
 package org.javaboy.tcrpc.client.proxy;
 
+import org.javaboy.tcrpc.client.request.Invocation;
+import org.javaboy.tcrpc.client.request.RequestHandler;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -22,7 +25,18 @@ public class RpcInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
+        String serviceKey = this.serviceKey;
+        String methodName = method.getName();
+        Class<?>[] parameterTypes = method.getParameterTypes();
 
-        return null;
+
+        Invocation invocation = Invocation.builder().serviceKey(serviceKey)
+                .methodName(methodName)
+                .args(args)
+                .argTypes(parameterTypes)
+                .extraDatas(extraData)
+                .build();
+
+        return RequestHandler.INSTANCE.request(invocation);
     }
 }

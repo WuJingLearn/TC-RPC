@@ -9,6 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ConnectionManager {
 
+    public static ConnectionManager INSTANCE = new ConnectionManager();
+
 
     private final Map<String, ConnectionDirectory> connectionDirectoryMap = new ConcurrentHashMap<>();
 

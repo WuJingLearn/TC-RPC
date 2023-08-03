@@ -11,9 +11,8 @@ import lombok.Data;
 public class ServiceInstance {
 
     private String serviceKey;
-    private String  ip;
+    private String ip;
     private Integer port;
-
 
 
     public void setServiceKey(String serviceKey) {
@@ -26,6 +25,11 @@ public class ServiceInstance {
 
     public void setPort(Integer port) {
         this.port = port;
+    }
+
+
+    public String getAddress() {
+        return ip + ":" + port;
     }
 
 

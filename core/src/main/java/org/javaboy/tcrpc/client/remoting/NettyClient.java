@@ -7,6 +7,8 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
+import org.javaboy.tcrpc.client.remoting.connection.Connection;
+import org.javaboy.tcrpc.client.remoting.handler.RpcClientHandler;
 import org.javaboy.tcrpc.codec.RpcDecoder;
 import org.javaboy.tcrpc.codec.RpcEncoder;
 import org.javaboy.tcrpc.codec.packet.TCProtocol;
@@ -20,10 +22,12 @@ public class NettyClient implements Client {
     private String ip;
     private Integer port;
     private Channel channel;
+    private Connection connection;
 
-    public NettyClient(String ip, Integer port) {
+    public NettyClient(String ip, Integer port,Connection connection) {
         this.ip = ip;
         this.port = port;
+        this.connection = connection;
     }
 
     @Override
@@ -37,6 +41,7 @@ public class NettyClient implements Client {
                     ChannelPipeline pipeline = ch.pipeline();
                     pipeline.addLast("encoder", new RpcEncoder());
                     pipeline.addLast("decoder", new RpcDecoder());
+                    pipeline.addLast("handler",new RpcClientHandler(connection.getResponseHandler()));
 
                 }
             });
