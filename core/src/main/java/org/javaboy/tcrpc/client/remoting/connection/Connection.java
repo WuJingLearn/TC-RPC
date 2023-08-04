@@ -29,7 +29,6 @@ public class Connection {
 
 
     public void request(TCProtocol protocol) {
-        System.out.println("connection 发送数据：" + protocol);
         client.sendData(protocol);
     }
 

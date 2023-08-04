@@ -15,6 +15,4 @@ public interface Client {
 
     void sendData(TCProtocol protocol) throws RpcException;
 
-
-
 }
