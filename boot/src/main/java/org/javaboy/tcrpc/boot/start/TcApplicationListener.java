@@ -14,6 +14,8 @@ import org.javaboy.tcrpc.server.remoting.RpcServer;
 import org.javaboy.tcrpc.server.remoting.RpcServerFactory;
 import org.javaboy.tcrpc.util.NetUtil;
 import org.javaboy.tcrpc.util.ServiceKeyHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ApplicationContextEvent;
@@ -25,10 +27,13 @@ import java.util.List;
  */
 public class TcApplicationListener implements ApplicationListener<ApplicationContextEvent> {
 
+    private static final Logger LOG = LoggerFactory.getLogger(TcApplicationListener.class);
+
     private RegistryFactory registryFactory = new DefaultRegistryFactory();
 
     @Override
     public void onApplicationEvent(ApplicationContextEvent event) {
+        LOG.info("TcApplicationListener receive spring context event.");
         ApplicationContext context = event.getApplicationContext();
         // 启动服务器
         startServer();
@@ -43,6 +48,8 @@ public class TcApplicationListener implements ApplicationListener<ApplicationCon
     }
 
     void exportService(ApplicationContext context) {
+        ProtocolConfig protocolConfig = ApplicationConfig.DEFAULT.getProtocolConfig();
+
         RegistryConfig registryConfig = ApplicationConfig.DEFAULT.getRegistryConfig();
         RegistryService registry = registryFactory.getRegistry(registryConfig);
         List<String> serviceBeanNames = ServiceManger.DEFAULT.getServiceBeanNames();
@@ -54,12 +61,13 @@ public class TcApplicationListener implements ApplicationListener<ApplicationCon
                     String version = serviceAnnotation.version();
                     Class<?> interfaceClass = serviceAnnotation.interfaceClass();
                     String serviceKey = ServiceKeyHelper.serviceKey(interfaceClass, version);
-                    ServiceProvider provider = new ServiceProvider(bean,interfaceClass,serviceKey);
+                    ServiceProvider provider = new ServiceProvider(bean, interfaceClass, serviceKey);
                     // 服务provider注册
                     ServiceManger.DEFAULT.addServiceProvider(serviceKey, provider);
                     ServiceInstance instance = ServiceInstance.builder()
                             .serviceKey(serviceKey)
-                            .port(registryConfig.getPort()).ip(NetUtil.getIp())
+                            .port(protocolConfig.getPort())
+                            .ip(protocolConfig.getIp())
                             .build();
                     // 注册
                     registry.register(instance);

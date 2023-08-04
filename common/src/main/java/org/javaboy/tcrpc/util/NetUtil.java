@@ -3,6 +3,7 @@ package org.javaboy.tcrpc.util;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.Enumeration;
 
 /**
@@ -11,6 +12,14 @@ import java.util.Enumeration;
 public class NetUtil {
 
     public static String getIp() {
+        try {
+            return InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+   /* public static String getIp() {
         Enumeration<NetworkInterface> interfaces;
         try {
             interfaces = NetworkInterface.getNetworkInterfaces();
@@ -28,6 +37,6 @@ public class NetUtil {
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
 }

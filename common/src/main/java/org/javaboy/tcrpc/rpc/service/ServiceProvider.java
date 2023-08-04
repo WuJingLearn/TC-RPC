@@ -17,6 +17,8 @@ public class ServiceProvider {
     private String serviceKey;
     private Map<String, Map<String, Method>> allMethod = new HashMap<>();
 
+    private Map<String, Map<String, Class<?>>> returnTypeMap = new HashMap<>();
+
     public ServiceProvider(Object serviceBean, Class<?> interfaceClass, String serviceKey) {
         this.serviceBean = serviceBean;
         this.serviceKey = serviceKey;
@@ -31,6 +33,9 @@ public class ServiceProvider {
             String argTypeDesc = ReflectUtil.typesToString(method.getParameterTypes());
             Map<String, Method> methodMap = allMethod.computeIfAbsent(name, k -> new HashMap<>());
             methodMap.putIfAbsent(argTypeDesc, method);
+
+            Map<String, Class<?>> returnMap = returnTypeMap.computeIfAbsent(name, k -> new HashMap<>());
+            returnMap.put(argTypeDesc, method.getReturnType());
         }
     }
 
@@ -39,6 +44,15 @@ public class ServiceProvider {
         if (methodName != null) {
             String argTypeDesc = ReflectUtil.typesToString(argTypes);
             return methodMap.get(argTypeDesc);
+        }
+        return null;
+    }
+
+    public Class<?> getReturnType(String methodName, Class<?>[] argTypes) {
+        Map<String, Class<?>> returnMap = returnTypeMap.get(methodName);
+        if (returnMap != null) {
+            String argTypeDesc = ReflectUtil.typesToString(argTypes);
+            return returnMap.get(argTypeDesc);
         }
         return null;
     }

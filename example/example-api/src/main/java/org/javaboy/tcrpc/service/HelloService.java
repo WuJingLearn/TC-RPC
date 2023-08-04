@@ -1,8 +1,8 @@
-package org.javaboy.tcprc.service;
+package org.javaboy.tcrpc.service;
 
-import org.javaboy.tcprc.pojo.RequestParam;
-import org.javaboy.tcprc.pojo.Response;
-import org.javaboy.tcprc.pojo.Student;
+import org.javaboy.tcrpc.pojo.RequestParam;
+import org.javaboy.tcrpc.pojo.Response;
+import org.javaboy.tcrpc.pojo.Student;
 
 /**
  * @author:majin.wj

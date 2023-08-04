@@ -16,5 +16,5 @@ import java.lang.annotation.Target;
 public @interface TCService {
     Class<?> interfaceClass();
 
-    String version();
+    String version() default "1.0.0";
 }

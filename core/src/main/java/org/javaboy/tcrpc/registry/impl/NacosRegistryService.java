@@ -11,6 +11,8 @@ import org.javaboy.tcrpc.exception.RpcException;
 import org.javaboy.tcrpc.registry.NotifyListener;
 import org.javaboy.tcrpc.registry.RegistryService;
 import org.javaboy.tcrpc.registry.ServiceInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,8 @@ import java.util.List;
  * @author:majin.wj
  */
 public class NacosRegistryService implements RegistryService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(NacosRegistryService.class);
 
     private NamingService namingService;
 
@@ -33,7 +37,9 @@ public class NacosRegistryService implements RegistryService {
         Integer port = instance.getPort();
         try {
             namingService.registerInstance(serviceKey, ip, port);
+            LOG.info("NacosRegisterCenter register service:{} success,ip:{} port:{}", serviceKey,ip,port);
         } catch (NacosException e) {
+            LOG.error("NacosRegisterCenter register service:{} error", serviceKey, e);
             throw new RpcException("register service: " + serviceKey + "error", e);
         }
     }
@@ -47,7 +53,7 @@ public class NacosRegistryService implements RegistryService {
                 public void onEvent(Event event) {
                     try {
                         List<Instance> serviceAllInstances = namingService.getAllInstances(serviceKey);
-
+//                        onEvent(serviceAllInstances);
                     } catch (NacosException e) {
                         throw new RuntimeException(e);
                     }
@@ -64,10 +70,7 @@ public class NacosRegistryService implements RegistryService {
     private List<ServiceInstance> covert(List<Instance> instances) {
         List<ServiceInstance> serviceInstances = new ArrayList<>();
         for (Instance instance : instances) {
-            ServiceInstance serviceInstance = ServiceInstance.builder().serviceKey(instance.getServiceName())
-                    .ip(instance.getIp())
-                    .port(instance.getPort())
-                    .build();
+            ServiceInstance serviceInstance = ServiceInstance.builder().serviceKey(instance.getServiceName()).ip(instance.getIp()).port(instance.getPort()).build();
             serviceInstances.add(serviceInstance);
         }
         return serviceInstances;

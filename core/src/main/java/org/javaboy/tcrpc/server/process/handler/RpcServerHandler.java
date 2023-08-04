@@ -17,18 +17,23 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<TCProtocol> {
 
     private static Logger LOG = LoggerFactory.getLogger(RpcServerHandler.class);
 
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        LOG.info("receive a connection,remoteAddress:{}", ctx.channel().remoteAddress());
+        LOG.info(" RpcServerHandler receive a connection,remoteAddress:{}", ctx.channel().remoteAddress());
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        LOG.info("RpcServerHandler connection closed:{}", ctx.channel().remoteAddress());
     }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TCProtocol protocol) throws Exception {
+        LOG.info("serverHandler receive a protocol:{}", protocol);
         Header header = protocol.getHeader();
         Request request = (Request) protocol.getBody();
         try {
-            RequestHandler.handleRequest(ctx,protocol);
+            RequestHandler.handleRequest(ctx, protocol);
         } catch (Exception e) {
             Response response = new Response();
             response.setSuccess(false);

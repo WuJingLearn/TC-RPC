@@ -40,7 +40,9 @@ public class RequestHandler {
             responseHeader.setRequestType(TCProtocol.RESPONSE);
             Response response = new Response();
             respProtocol.setBody(response);
-            respProtocol.setHeader(requestHeader);
+            respProtocol.setHeader(responseHeader);
+
+            Class<?> returnType = provider.getReturnType(methodName, argTypes);
 
             retFuture.whenComplete((r, e) -> {
                 if (e != null) {
@@ -49,6 +51,7 @@ public class RequestHandler {
                 } else {
                     response.setSuccess(true);
                     response.setRetValue(r);
+                    response.setRetType(returnType);
                 }
                 ctx.writeAndFlush(respProtocol);
             });

@@ -58,7 +58,7 @@ public class CodecV1 implements Codec {
         }
         Object[] args = request.getArgs();
         for (int i = 0; i < args.length; i++) {
-            byte[] data = serializer.serialize(args);
+            byte[] data = serializer.serialize(args[i]);
             CodecUtil.writeBytes(data, out);
         }
     }
@@ -136,6 +136,7 @@ public class CodecV1 implements Codec {
         Response response = new Response();
         int bodyStart = buf.readerIndex();
         boolean success = buf.readBoolean();
+        response.setSuccess(success);
         if (success) {
             String retTypeName = CodecUtil.readString(buf);
             Class<?> retType;

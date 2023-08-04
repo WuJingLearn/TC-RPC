@@ -9,7 +9,7 @@ public class ServiceKeyHelper {
         if (version == null) {
             return interfaceClass.getName();
         }
-        return interfaceClass.getName() + "-" + version;
+        return interfaceClass.getName() + ":" + version;
     }
 
 }

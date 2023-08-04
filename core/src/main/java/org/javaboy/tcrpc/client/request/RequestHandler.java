@@ -4,6 +4,7 @@ package org.javaboy.tcrpc.client.request;
 import org.javaboy.tcrpc.client.remoting.connection.Connection;
 import org.javaboy.tcrpc.client.remoting.connection.ConnectionDirectory;
 import org.javaboy.tcrpc.client.remoting.connection.ConnectionManager;
+import org.javaboy.tcrpc.codec.impl.CodecV1;
 import org.javaboy.tcrpc.codec.packet.Header;
 import org.javaboy.tcrpc.codec.packet.Request;
 import org.javaboy.tcrpc.codec.packet.TCProtocol;
@@ -23,12 +24,13 @@ public class RequestHandler {
     private ConnectionManager connectionManager = ConnectionManager.INSTANCE;
 
     public Object request(Invocation invocation) {
-
         ConnectionDirectory directory = connectionManager.getConnectionDirectory(invocation.getServiceKey());
         Connection connection = directory.getConnection();
+        if (connection == null) {
+            throw new RpcException("service:" + invocation.getServiceKey() + " no available provider");
+        }
         long id = connection.getId();
         TCProtocol protocol = createProtocol(invocation, id);
-        connection.request(protocol);
         return syncRequest(protocol, connection);
     }
 
@@ -51,6 +53,7 @@ public class RequestHandler {
     public TCProtocol createProtocol(Invocation invocation, long requestId) {
         Header header = new Header();
         header.setId(requestId);
+        header.setType(CodecV1.type);
         header.setSerializeType(FastJsonSerializer.type);
         header.setRequestType(TCProtocol.REQUEST);
         Request request = new Request();

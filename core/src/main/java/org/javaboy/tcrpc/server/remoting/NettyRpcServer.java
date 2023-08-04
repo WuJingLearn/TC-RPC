@@ -5,6 +5,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.javaboy.tcrpc.codec.RpcDecoder;
 import org.javaboy.tcrpc.codec.RpcEncoder;
 import org.javaboy.tcrpc.exception.RpcException;
@@ -40,7 +41,7 @@ public class NettyRpcServer implements RpcServer {
 
         ServerBootstrap serverBootstrap = new ServerBootstrap()
                 .group(bossGroup, workerGroup)
-                .channel(ServerSocketChannel.class)
+                .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {

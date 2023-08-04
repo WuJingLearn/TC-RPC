@@ -4,21 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e3df36-3444-41f5-bb10-9565e7212e79" name="Changes" comment="rpc">
-      <change afterPath="$PROJECT_DIR$/example/example-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/RequestParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/service/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-consumer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/example-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/pom.xml" afterDir="false" />
+    <list default="true" id="70e3df36-3444-41f5-bb10-9565e7212e79" name="Changes" comment="demo">
+      <change afterPath="$PROJECT_DIR$/example/example-consumer/src/main/java/org/javaboy/tcrpc/consumer/RpcController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/example-consumer/src/main/java/org/javaboy/tcrpc/consumer/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/example-provider/src/main/java/org/javaboy/tcrpc/provider/HelloServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/client/ReferenceBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/client/ReferenceBeanManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/EnableTcRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/EnableTcRpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/TCService.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/TCService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcReferenceBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcReferenceBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/client/ReferenceBeanManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ProtocolConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/config/ProtocolConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/NetUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/NetUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/ServiceKeyHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/ServiceKeyHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/proxy/RpcInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/proxy/RpcInvocationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/ConnectionDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/ConnectionDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/request/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/request/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/codec/impl/CodecV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/codec/impl/CodecV1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/process/handler/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/process/handler/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/process/handler/RpcServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/process/handler/RpcServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/NettyRpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/NettyRpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/RequestParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcrpc/pojo/RequestParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcrpc/pojo/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/pojo/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcrpc/pojo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcprc/service/HelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-api/src/main/java/org/javaboy/tcrpc/service/HelloService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-consumer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-consumer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/example-provider/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +73,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -68,11 +89,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
-    "spring.configuration.checksum": "881cc4157ed641a365a86452f27ed745",
+    "spring.configuration.checksum": "ba8c9bf2aad5266f7d38b33df17f3b0f",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,13 +102,39 @@
       <recent name="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/codec" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="NetUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.javaboy.tcrpc.util.NetUtil" />
-      <module name="common" />
+  <component name="RunManager" selected="Spring Boot.ConsumerApplication">
+    <configuration name="ProviderApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.javaboy.tcrpc.ProviderApplication" />
+      <module name="example-provider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.javaboy.tcrpc.util.*" />
+          <option name="PATTERN" value="org.javaboy.tcrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.javaboy.tcprc.Test" />
+      <module name="example-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.tcrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.javaboy.tcrpc.consumer.Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.javaboy.tcrpc.consumer.Test" />
+      <module name="example-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.tcrpc.consumer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,9 +155,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="example-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.javaboy.tcrpc.ConsumerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.tcrpc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="example-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.javaboy.tcprc.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.tcprc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NetUtil" />
+        <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="Application.ProviderApplication" />
+        <item itemvalue="Application.org.javaboy.tcrpc.consumer.Test" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Spring Boot.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +213,10 @@
       <workItem from="1690898761086" duration="3184000" />
       <workItem from="1690983110843" duration="1648000" />
       <workItem from="1690984894804" duration="3724000" />
-      <workItem from="1691068465681" duration="6482000" />
+      <workItem from="1691068465681" duration="6583000" />
+      <workItem from="1691122460782" duration="2000" />
+      <workItem from="1691122590092" duration="2637000" />
+      <workItem from="1691138985765" duration="6723000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -186,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691075628977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="demo">
+      <option name="closed" value="true" />
+      <created>1691076343718</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691076343718</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +294,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="rpc" />
-    <option name="LAST_COMMIT_MESSAGE" value="rpc" />
+    <MESSAGE value="demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -217,11 +306,25 @@
           <properties field="registryPort" class="org.javaboy.tcrpc.boot.parse.TcRpcProperties" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/util/NetUtil.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.net.BindException" package="java.net" />
+          <option name="timeStamp" value="24" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TC_RPC$ProviderApplication.ic" NAME="ProviderApplication Coverage Results" MODIFIED="1691139475757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.javaboy.tcprc.*</FILTER>
+    </SUITE>
   </component>
 </project>

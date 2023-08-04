@@ -24,6 +24,10 @@ public class RpcInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        if(method.getDeclaringClass() == Object.class) {
+            System.out.println("本地方法");
+            return "$invoke";
+        }
 
         String serviceKey = this.serviceKey;
         String methodName = method.getName();

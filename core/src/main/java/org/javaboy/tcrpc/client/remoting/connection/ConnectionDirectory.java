@@ -24,14 +24,11 @@ import java.util.stream.Collectors;
 public class ConnectionDirectory {
 
     private static final Logger LOG = LoggerFactory.getLogger(ConnectionDirectory.class);
-
-    private List<Connection> avaiableConnections = new ArrayList<>();
     /**
      * Key ip:port
      */
     private Map<String, Connection> connectionMap = new HashMap<>();
     private String serviceKey;
-    private Map<String, LoadBalance> loadBalancers;
 
     private RegistryConfig registryConfig = ApplicationConfig.DEFAULT.getRegistryConfig();
     private RegistryService registry = RegistryFactory.DEFAULT.getRegistry(registryConfig);
@@ -76,7 +73,7 @@ public class ConnectionDirectory {
             destroyConnection.add(toDestroyConnection);
         }
         destroyConnections(destroyConnection);
-        createConnections(newAddInstances,this.connectionMap);
+        createConnections(newAddInstances, this.connectionMap);
     }
 
     void destroyConnections(List<Connection> connections) {
@@ -88,19 +85,19 @@ public class ConnectionDirectory {
     void createConnections(List<ServiceInstance> instances, Map<String, Connection> connectionMap) {
         for (ServiceInstance instance : instances) {
             Connection connection = new Connection(instance.getIp(), instance.getPort());
-            connection.init();;
+            connection.init();
             connectionMap.put(instance.getAddress(), connection);
         }
     }
 
 
     public Connection getConnection() {
-        return loadBalancers.get("random").select(avaiableConnections);
-    }
+        List<Connection> connections = new ArrayList<>(connectionMap.values());
+        if(connections.size() == 0) {
+            return null;
+        }
+        return connections.get(0);
 
-
-    public void initLoadBalancer() {
-        loadBalancers.put(LoadBalanceEnum.RANDOM.getCode(), new RandomLoadbalance());
     }
 
 

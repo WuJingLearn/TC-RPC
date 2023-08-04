@@ -23,4 +23,6 @@ public @interface EnableTcRpc {
 
     String registryPort() ;
 
+    String port() default "3000";
+
 }

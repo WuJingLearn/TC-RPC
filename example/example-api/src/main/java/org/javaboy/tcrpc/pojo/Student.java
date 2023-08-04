@@ -1,4 +1,4 @@
-package org.javaboy.tcprc.pojo;
+package org.javaboy.tcrpc.pojo;
 
 /**
  * @author:majin.wj
@@ -7,6 +7,8 @@ public class Student {
 
     private String name;
     private Integer age;
+
+
 
     public String getName() {
         return name;

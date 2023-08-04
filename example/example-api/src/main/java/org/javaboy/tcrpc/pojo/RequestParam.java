@@ -1,4 +1,4 @@
-package org.javaboy.tcprc.pojo;
+package org.javaboy.tcrpc.pojo;
 
 /**
  * @author:majin.wj
