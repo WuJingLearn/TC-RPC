@@ -1,5 +1,7 @@
 package org.javaboy.tcrpc.rpc.service;
 
+import org.javaboy.tcrpc.registry.ServiceInstance;
+
 import java.util.*;
 
 /**
@@ -15,6 +17,7 @@ public class ServiceManger {
 
     private List<String> serviceBeanNames = new ArrayList<>();
 
+    private List<ServiceInstance> serviceInstances = new ArrayList<>();
     /**
      * key: serviceKey
      */
@@ -37,4 +40,11 @@ public class ServiceManger {
         return serviceProviderMap.get(serviceKey);
     }
 
+    public void addServiceInstanve(ServiceInstance instance) {
+        serviceInstances.add(instance);
+    }
+
+    public List<ServiceInstance> getServiceInstances() {
+        return Collections.unmodifiableList(serviceInstances);
+    }
 }

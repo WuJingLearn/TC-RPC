@@ -37,10 +37,10 @@ public class ConnectionDirectory {
 
     void init() {
         List<ServiceInstance> instances = registry.subscribe(serviceKey, instances1 -> {
-            LOG.info("RegistryCenter notify ServiceChange instances:{} ", JSON.toJSONString(instances1));
+            LOG.info("RegistryCenter notify change service:{}  newInstance:{} ", serviceKey,
+                    JSON.toJSONString(instances1));
             onServiceChange(instances1);
         });
-
         onServiceChange(instances);
     }
 
@@ -90,7 +90,7 @@ public class ConnectionDirectory {
 
     public Connection getConnection() {
         List<Connection> connections = new ArrayList<>(connectionMap.values());
-        if(connections.size() == 0) {
+        if (connections.size() == 0) {
             return null;
         }
         return connections.get(0);

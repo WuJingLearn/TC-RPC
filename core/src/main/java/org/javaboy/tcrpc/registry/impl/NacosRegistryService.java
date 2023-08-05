@@ -27,7 +27,7 @@ public class NacosRegistryService implements RegistryService {
     private NamingService namingService;
 
     public NacosRegistryService(RegistryConfig config) {
-        initNacos(config.getIp(), config.getPort());
+        initNacosService(config.getIp(), config.getPort());
     }
 
     @Override
@@ -37,10 +37,22 @@ public class NacosRegistryService implements RegistryService {
         Integer port = instance.getPort();
         try {
             namingService.registerInstance(serviceKey, ip, port);
-            LOG.info("NacosRegisterCenter register service:{} success,ip:{} port:{}", serviceKey,ip,port);
+            LOG.info("NacosRegisterCenter register service:{} success,ip:{} port:{}", serviceKey, ip, port);
         } catch (NacosException e) {
             LOG.error("NacosRegisterCenter register service:{} error", serviceKey, e);
-            throw new RpcException("register service: " + serviceKey + "error", e);
+        }
+    }
+
+    @Override
+    public void unRegister(ServiceInstance instance) {
+        String serviceKey = instance.getServiceKey();
+        String ip = instance.getIp();
+        Integer port = instance.getPort();
+        try {
+            namingService.deregisterInstance(serviceKey, ip, port);
+            LOG.info("NacosRegisterCenter unRegister service:{} success,ip:{} port:{}", serviceKey, ip, port);
+        } catch (NacosException e) {
+            LOG.error("NacosRegisterCenter unRegister service:{} error", serviceKey, e);
         }
     }
 
@@ -53,7 +65,7 @@ public class NacosRegistryService implements RegistryService {
                 public void onEvent(Event event) {
                     try {
                         List<Instance> serviceAllInstances = namingService.getAllInstances(serviceKey);
-//                        onEvent(serviceAllInstances);
+                        listener.notify(covert(serviceAllInstances));
                     } catch (NacosException e) {
                         throw new RuntimeException(e);
                     }
@@ -76,7 +88,7 @@ public class NacosRegistryService implements RegistryService {
         return serviceInstances;
     }
 
-    private void initNacos(String ip, Integer port) {
+    private void initNacosService(String ip, Integer port) {
         String address = ip + ":" + port;
         try {
             this.namingService = NacosFactory.createNamingService(address);

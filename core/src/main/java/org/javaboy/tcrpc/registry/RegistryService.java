@@ -8,5 +8,7 @@ import java.util.List;
 public interface RegistryService {
     void register(ServiceInstance instance);
 
+    void unRegister(ServiceInstance instance);
+
     List<ServiceInstance> subscribe(String serviceKey,NotifyListener listener);
 }

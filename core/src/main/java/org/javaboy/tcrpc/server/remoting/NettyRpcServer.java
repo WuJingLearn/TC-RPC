@@ -14,6 +14,10 @@ import org.javaboy.tcrpc.server.process.handler.RpcServerHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
 /**
  * @author:majin.wj
  */
@@ -27,11 +31,13 @@ public class NettyRpcServer implements RpcServer {
 
     private String ip;
     private Integer port;
+    private InetSocketAddress address;
 
 
     public NettyRpcServer(String ip, Integer port) {
         this.ip = ip;
         this.port = port;
+        this.address = new InetSocketAddress(ip,port);
     }
 
     @Override
@@ -62,5 +68,10 @@ public class NettyRpcServer implements RpcServer {
         } catch (Exception e) {
             throw new RpcException("server shutdown error", e);
         }
+    }
+
+    @Override
+    public SocketAddress getAddress() {
+        return address;
     }
 }
