@@ -105,7 +105,7 @@ public class TcApplicationDeployer {
         for (ServiceInstance serviceInstance : serviceInstances) {
             try {
                 registryService.unRegister(serviceInstance);
-                LOG.error("service:{} deregister success", serviceInstance.getServiceKey());
+                LOG.info("service:{} deregister success", serviceInstance.getServiceKey());
             } catch (Exception e) {
                 LOG.error("service:{} deregister error", serviceInstance.getServiceKey(), e);
             }

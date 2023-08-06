@@ -43,18 +43,7 @@ public class TcImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
         tcReferenceProcessorBeanDefinition.setPropertyValues(propertyValues);
         registry.registerBeanDefinition("tcReferenceBeanPostProcessor", tcReferenceProcessorBeanDefinition);
 
-        String registryType = (String) rpcAttributes.get("registryType");
-        String registryIp = (String) rpcAttributes.get("registryIp");
-        String registryPort = (String) rpcAttributes.get("registryPort");
         String port = (String) rpcAttributes.get("port");
-
-        // 注册中心配置
-        RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setType(registryType);
-        registryConfig.setIp(registryIp);
-        registryConfig.setPort(Integer.valueOf(registryPort));
-        ApplicationConfig.DEFAULT.setRegistryConfig(registryConfig);
-
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setPort(Integer.valueOf(port));
         protocolConfig.setIp(NetUtil.getIp());

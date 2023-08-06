@@ -17,12 +17,6 @@ import java.lang.annotation.Target;
 public @interface EnableTcRpc {
     String[] packages();
 
-    String registryType();
-
-    String registryIp();
-
-    String registryPort() ;
-
     String port() default "3000";
 
 }

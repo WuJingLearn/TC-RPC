@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70e3df36-3444-41f5-bb10-9565e7212e79" name="Changes" comment="rpc">
-      <change afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationDeployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/EnableTcRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/annotation/EnableTcRpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcImportBeanDefinitionRegistrar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcReferenceBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/parse/TcReferenceBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationDeployer.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationDeployer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/javaboy/tcrpc/rpc/service/ServiceManger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/ConnectionDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/client/remoting/connection/ConnectionDirectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/RegistryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/RegistryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/registry/impl/NacosRegistryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/NettyRpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/NettyRpcServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/javaboy/tcrpc/server/remoting/RpcServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProviderApplication" />
         <item itemvalue="Spring Boot.ConsumerApplication" />
+        <item itemvalue="Application.ProviderApplication" />
         <item itemvalue="Application.org.javaboy.tcrpc.consumer.Test" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Spring Boot.Main" />
@@ -194,7 +191,7 @@
       <workItem from="1691122460782" duration="2000" />
       <workItem from="1691122590092" duration="2637000" />
       <workItem from="1691138985765" duration="9117000" />
-      <workItem from="1691202990562" duration="2876000" />
+      <workItem from="1691202990562" duration="7113000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -268,7 +265,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691156187740</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="rpc">
+      <option name="closed" value="true" />
+      <created>1691227205444</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691227205444</updated>
+    </task>
+    <task id="LOCAL-00011" summary="rpc">
+      <option name="closed" value="true" />
+      <created>1691227205787</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1691227205787</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,9 +319,9 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/boot/src/main/java/org/javaboy/tcrpc/boot/start/TcApplicationDeployer.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="40" />
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.28/spring-context-5.3.28.jar!/org/springframework/context/support/AbstractApplicationContext.class</url>
+          <line>550</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

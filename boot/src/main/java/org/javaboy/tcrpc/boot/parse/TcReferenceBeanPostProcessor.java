@@ -3,28 +3,36 @@ package org.javaboy.tcrpc.boot.parse;
 import org.apache.commons.lang3.StringUtils;
 import org.javaboy.tcrpc.annotation.TCReference;
 import org.javaboy.tcrpc.client.proxy.ClientProxyFactory;
+import org.javaboy.tcrpc.config.ApplicationConfig;
+import org.javaboy.tcrpc.config.RegistryConfig;
 import org.javaboy.tcrpc.util.ServiceKeyHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.util.ReflectionUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * @author:majin.wj
  */
-public class TcReferenceBeanPostProcessor implements BeanPostProcessor, BeanFactoryAware {
+public class TcReferenceBeanPostProcessor implements BeanPostProcessor, BeanFactoryAware, ApplicationContextAware, InitializingBean {
 
     private static Logger LOG = LoggerFactory.getLogger(TcReferenceBeanPostProcessor.class);
 
     private String[] packages;
     private DefaultListableBeanFactory beanFactory;
+    private ApplicationContext context;
 
     private Map<String, Object> referenceBeanMap = new HashMap<>();
 
@@ -79,5 +87,23 @@ public class TcReferenceBeanPostProcessor implements BeanPostProcessor, BeanFact
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = (DefaultListableBeanFactory) beanFactory;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.context = applicationContext;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        initRegistryConfig();
+    }
+
+    private void initRegistryConfig() {
+        List<RegistryConfig> beans = new ArrayList<>(context.getBeansOfType(RegistryConfig.class).values());
+        if (beans.size() > 0) {
+            RegistryConfig registryConfig = beans.get(0);
+            ApplicationConfig.DEFAULT.setRegistryConfig(registryConfig);
+        }
     }
 }
