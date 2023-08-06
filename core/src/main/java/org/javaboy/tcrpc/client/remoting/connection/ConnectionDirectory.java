@@ -97,5 +97,11 @@ public class ConnectionDirectory {
 
     }
 
+    public void close() {
+        for (Connection connection : connectionMap.values()) {
+            connection.destroy();
+        }
+    }
+
 
 }

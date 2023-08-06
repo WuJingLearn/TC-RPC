@@ -31,4 +31,10 @@ public class ConnectionManager {
     }
 
 
+    public void destroyConnection() {
+        for (ConnectionDirectory directory : connectionDirectoryMap.values()) {
+            directory.close();
+        }
+    }
+
 }
