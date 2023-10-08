@@ -8,7 +8,9 @@ import java.lang.reflect.Proxy;
 public class ClientProxyFactory {
 
     public static <T> T getProxy(Class<T> interfaceClass, String serviceKey) {
-        return ((T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[]{interfaceClass}, new RpcInvocationHandler(interfaceClass, serviceKey, null)));
+        Class<T>[] interfaces = new Class[]{interfaceClass};
+
+        return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), interfaces, new RpcInvocationHandler(interfaceClass, serviceKey, null));
     }
 
 }

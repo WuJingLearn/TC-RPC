@@ -19,7 +19,6 @@ public class RpcController {
     @TCReference
     HelloService helloService;
 
-
     @PostConstruct
     public void init() {
         String result = helloService.hello("zs", 10);

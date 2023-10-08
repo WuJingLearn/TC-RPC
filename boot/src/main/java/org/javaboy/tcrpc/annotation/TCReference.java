@@ -14,4 +14,16 @@ public @interface TCReference {
 
     String id() default "";
     String version() default "1.0.0";
+
+    /**
+     * 是否异步调用
+     * @return
+     */
+    boolean async() default false;
+
+    /**
+     * 超时时间
+     * @return
+     */
+    int timeout() default 3000;
 }
